@@ -1,0 +1,3 @@
+= HackerRank Solutions
+
+Java solutions for the problems on the https://www.hackerrank.com/[HackerRank].
