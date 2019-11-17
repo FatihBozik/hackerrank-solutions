@@ -1,16 +1,18 @@
-plugins {
-    id 'java'
+allprojects {
+    repositories {
+        mavenCentral()
+    }
 }
 
-group 'io.github.fatihbozik'
-version '0.1'
+subprojects {
+    apply plugin: 'java'
 
-sourceCompatibility = 1.8
+    group 'io.github.fatihbozik'
+    version = '0.1'
+    sourceCompatibility = 1.8
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testCompile 'junit:junit:4.12'
+    dependencies {
+        testCompile 'junit:junit:4.12'
+        testCompile 'com.github.stefanbirkner:system-rules:1.19.0'
+    }
 }
