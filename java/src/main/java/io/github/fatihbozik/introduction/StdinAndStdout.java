@@ -2,7 +2,7 @@ package io.github.fatihbozik.introduction;
 
 import java.util.Scanner;
 
-public class StdinAndStdOut {
+public class StdinAndStdout {
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
         final int firstNumber = scanner.nextInt();

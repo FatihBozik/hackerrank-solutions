@@ -11,7 +11,7 @@ import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.emp
 /**
  * @author Fatih Bozik
  */
-public class StdinAndStdOutTest {
+public class StdinAndStdOut2Test {
     @Rule
     public final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
 
@@ -19,9 +19,13 @@ public class StdinAndStdOutTest {
     public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 
     @Test
-    public void shouldPrintTextsFromStdIn() {
-        systemInMock.provideLines("42", "177", "56");
-        StdinAndStdOut.main(new String[0]);
-        Assert.assertEquals("\nOutput:\n42\n177\n56\n", systemOutRule.getLog());
+    public void shouldPrintStringDoubleAndIntegerValuesReadFromConsole() {
+        systemInMock.provideLines("42", "3.1415", "Welcome to HackerRank's Java tutorials!");
+        StdinAndStdout2.main(new String[0]);
+        Assert.assertEquals(
+                "String: Welcome to HackerRank's Java tutorials!\n" +
+                        "Double: 3.1415\n" +
+                        "Int: 42\n", systemOutRule.getLog());
     }
+
 }
